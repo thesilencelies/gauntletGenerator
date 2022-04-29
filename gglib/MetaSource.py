@@ -37,22 +37,22 @@ class TestSource(MetaSource):
     rval = []
     for i in range(6):
       rval.append(ggt.Archetype(
-          f"aggro{i}", ggt.ArchetypeCategory.Aggro, 0.05, 0))
+          f"aggro{i}", ggt.ArchetypeCategory.Aggro, i*0.02, 0.03-i*0.01))
     for i in range(5):
       rval.append(ggt.Archetype(
-          f"midrange{i}", ggt.ArchetypeCategory.Midrange, 0.05, 0))
+          f"midrange{i}", ggt.ArchetypeCategory.Midrange, i*0.03, 0.03-i*0.01))
     for i in range(7):
       rval.append(ggt.Archetype(
-          f"control{i}", ggt.ArchetypeCategory.Control, 0.05, 0))
+          f"control{i}", ggt.ArchetypeCategory.Control, i*0.01, 0.03-i*0.01))
     for i in range(2):
       rval.append(ggt.Archetype(
-          f"combo{i}", ggt.ArchetypeCategory.Combo, 0.05, 0))
+          f"combo{i}", ggt.ArchetypeCategory.Combo, i*0.05, 0.03-i*0.01))
 
     return rval
 
   def get_decklists(self, archetype: ggt.Archetype, ndecks: int = 1,
                     min_performance: int = -1) -> List[ggt.Decklist]:
-    mainboard = [ggt.Card("island", edition="KHD", quantity=30)]
+    mainboard = [ggt.Card("Island", edition="KHD", quantity=30)]
     mainboard += [ggt.Card("Persistent Petitioners",
                            edition="RNA", quantity=30)]
     sideboard = [ggt.Card("Pithing Needle", edition="RTR", quantity=4)]

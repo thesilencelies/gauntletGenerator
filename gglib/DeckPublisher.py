@@ -57,6 +57,7 @@ class PrintPublisher(DeckPublisher):
 
   def publish(self, deck: ggt.Decklist) -> None:
     print(f"deck {deck.name}:")
+    print(f"performance score: {deck.performance}")
     print("  mainboard:")
     for c in deck.mainboard:
       print(f"    {c.quantity:02} {c.name} [{c.edition}]")

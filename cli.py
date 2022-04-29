@@ -33,8 +33,8 @@ def get_arguments():
   parser.add_argument("--algorithm", default="TopPlayRate",
                       help="which algorithm to use")
 
-  # TODO(Stephen): add arguments and handling to specify which meta source
-  # TODO(Stephen): add arguments and handling to specify which output format
+  # TODO: add arguments and handling to specify which meta source
+  # TODO: add arguments and handling to specify which output format
 
   args = parser.parse_args()
   return args
@@ -50,5 +50,7 @@ if __name__ == "__main__":
 
   src = ggms.TestSource()
   pub = ggdp.PrintPublisher()
+
+  # TODO(Rich): select a different source and publisher depending on the arguments
 
   generate_gauntlet(args, gen, src, pub)
