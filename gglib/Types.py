@@ -66,3 +66,5 @@ class Archetype:
   category: ArchetypeCategory
   meta_share: float
   share_change: float
+  # used internally by sources
+  url: str
